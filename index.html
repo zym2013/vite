@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<link rel="icon" type="image/svg+xml" href="/icon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="https://cdn.jsdmirror.com/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdmirror.com/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdmirror.com/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
 	<title>Amazing Luogu</title>
 </head>
@@ -14,13 +14,42 @@
 	<div id="app">
 		<aside class="sidebar" id="sidebar">
 			<nav class="nav-menu">
-				<a href="#" class="nav-item active">
+				<a class="nav-logo-item" data-page="none">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" class="nav-icon" height="24" viewBox="0 0 24 24">
+						<path fill="currentColor"
+							d="M12.424 0c-.435-.005-.964.138-1.569.65c-.967.817-2.554 3.235-3.56 4.38s-2.002 1.65-2.48 2.493c-.477.844-.824 1.598-.385 2.568s2.308 2.592 3.018 3.247s.724.566 1.24.68c.517.113 1.38.188 1.857 0c.478-.19.993-.63 1.006-1.133s-.515-1.409-.928-1.887c-.413-.479-1.213-.769-1.549-.983s-.373-.076-.463-.303s-.413-.59-.078-1.056c.336-.466 1.38-1.033 2.09-1.738s1.625-1.61 2.167-2.492s1.06-2.064 1.085-2.794C13.901.902 13.603.285 13.1.12a2.2 2.2 0 0 0-.676-.12m-.397 6.936c-.243.008-.443.037-.566.097c-.492.24-.48.997-.151 1.515s1.618 1.223 2.124 1.59c.505.366.883.292.908.607c.026.316.102.315-.757 1.287c-.86.973-3.222 3.371-4.397 4.546c-1.175 1.174-1.77 1.503-2.654 2.5S4.259 21.78 3.88 22.563s-.15.997.38 1.212c.531.214 2.11.34 2.804.075c.695-.265.822-1.034 1.365-1.666c.543-.63.721-.859 1.896-2.122c.472-.507 1.242-1.32 1.998-2.118c.048.151.126.324.243.525c.423.727 1.922 2.219 2.537 3.009s.77 1.33 1.154 1.73c.384.402.55.564 1.152.677c.602.112 1.998.188 2.459 0c.461-.189.552-.576.308-1.127c-.243-.552-1.346-1.555-1.768-2.182c-.423-.627-1.243-2.095-1.845-2.71s-1.025-.776-1.768-.977c-.43-.115-.982-.11-1.444-.034c.769-.811 1.564-1.647 2.129-2.246c1.415-1.503 2.88-2.614 3.335-3.56c.455-.948-.214-1.492-.606-2.123c-.391-.631-1.124-1.363-1.743-1.666c-.62-.303-1.151-.1-1.972-.151c-.616-.038-1.737-.197-2.467-.173" />
+					</svg>
+					<span class="nav-text">Amazing Luogu</span>
+				</a>
+				<a href="#home" class="nav-item active" data-page="home">
 					<i class="fas fa-home nav-icon"></i>
 					<span class="nav-text">首页</span>
 				</a>
-				<a href="#" class="nav-item">
-					<i class="fas fa-question nav-icon"></i>
-					<span class="nav-text">啥也不是</span>
+				<a href="#explore" class="nav-item" data-page="explore">
+					<svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+						fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+						stroke-linejoin="round" class="lucide lucide-telescope size-5 shrink-0" aria-hidden="true">
+						<path
+							d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44">
+						</path>
+						<path d="m13.56 11.747 4.332-.924"></path>
+						<path d="m16 21-3.105-6.21"></path>
+						<path
+							d="M16.485 5.94a2 2 0 0 1 1.455-2.425l1.09-.272a1 1 0 0 1 1.212.727l1.515 6.06a1 1 0 0 1-.727 1.213l-1.09.272a2 2 0 0 1-2.425-1.455z">
+						</path>
+						<path d="m6.158 8.633 1.114 4.456"></path>
+						<path d="m8 21 3.105-6.21"></path>
+						<circle cx="12" cy="13" r="2"></circle>
+					</svg>
+					<span class="nav-text">探索</span>
+				</a>
+				<a href="#users" class="nav-item" data-page="users">
+					<i class="fas fa-users nav-icon"></i>
+					<span class="nav-text">用户</span>
+				</a>
+				<a href="#about" class="nav-item" data-page="about">
+					<i class="fas fa-info-circle nav-icon"></i>
+					<span class="nav-text">关于</span>
 				</a>
 			</nav>
 		</aside>
@@ -31,8 +60,8 @@
 					<button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
 						<i class="fas fa-bars"></i>
 					</button>
-					<nav class="breadcrumb">
-						<a href="#" class="breadcrumb-item">
+					<nav class="breadcrumb" id="breadcrumb">
+						<a href="#home" class="breadcrumb-item">
 							<i class="fas fa-home"></i>
 							<span>首页</span>
 						</a>
@@ -42,14 +71,16 @@
 					<img src="/logo.png" alt="Logo" class="logo-img">
 				</div>
 			</header>
-			<main class="content">
-				<h1 class="title">I <span class="underline-text">am</span> <span class="underline-text">lg</span></h1>
+
+			<!-- 首页内容 -->
+			<main class="content" id="home-page">
+				<h1 class="title">I <span class="underline-text">am</span> <span class="underline-text">Lg</span></h1>
 				<p class="subtitle">
 					I am <span class="underline-text">Am</span>azing <span class="underline-text">L</span>uo<span
 						class="underline-text">g</span>u
 				</p>
 				<div class="description">
-					<p class="description-text">Amazing Luogu 是一款让洛谷变得更好的篡改猴插件。<br><br>这是还未开发完的网页，屁用没有。</p>
+					<p class="description-text">Amazing Luogu 是一款让洛谷变得更好的篡改猴插件。</p>
 				</div>
 				<section class="features">
 					<h2 class="section-title">闪光点</h2>
@@ -149,6 +180,425 @@
 						</div>
 					</div>
 				</section>
+			</main>
+
+			<!-- 探索页面内容 -->
+			<main class="content" id="explore-page" style="display: none;">
+				<div class="explore-header">
+					<h1 class="explore-title">探索推荐</h1>
+					<p class="explore-subtitle">发现优质网站与脚本资源</p>
+					<div class="search-box">
+						<i class="fas fa-search"></i>
+						<input type="text" id="searchInput" placeholder="搜索网站或脚本..." class="search-input">
+						<button id="searchBtn" class="search-btn">
+							<i class="fas fa-search"></i>
+						</button>
+						<div class="explore-actions">
+							<button id="refreshBtn" class="refresh-btn">
+								<i class="fas fa-sync-alt"></i>
+								<span>刷新数据</span>
+							</button>
+						</div>
+					</div>
+					<div class="filter-tabs">
+						<button class="filter-tab active" data-filter="all">全部</button>
+						<button class="filter-tab" data-filter="website">网站推荐</button>
+						<button class="filter-tab" data-filter="script">脚本推荐</button>
+					</div>
+				</div>
+
+				<!-- 网站推荐区域 -->
+				<section class="recommendations-section" id="website-section">
+					<h2 class="section-title">
+						<i class="fas fa-globe"></i>
+						网站推荐
+						<span class="section-count" id="website-count">6</span>
+					</h2>
+					<div class="tag-filter">
+						<div class="tag-filter-header">
+							<i class="fas fa-tags"></i>
+							<span>按标签筛选：</span>
+						</div>
+						<div class="tag-list" id="website-tags">
+							<button class="tag-filter-item active" data-tag="all">全部</button>
+							<button class="tag-filter-item" data-tag="学习">学习</button>
+							<button class="tag-filter-item" data-tag="编程">编程</button>
+							<button class="tag-filter-item" data-tag="工具">工具</button>
+							<button class="tag-filter-item" data-tag="社区">社区</button>
+							<button class="tag-filter-item" data-tag="算法">算法</button>
+						</div>
+					</div>
+					<div class="recommendation-grid" id="website-grid">
+						<!-- 初始显示加载状态 -->
+						<div class="loading-container">
+							<div class="loading-spinner"></div>
+							<div class="loading-text">正在加载网站数据...</div>
+							<div class="loading-subtext">从 GitHub 获取最新推荐</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- 脚本推荐区域 -->
+				<section class="recommendations-section" id="script-section">
+					<h2 class="section-title">
+						<i class="fas fa-code"></i>
+						脚本推荐
+						<span class="section-count" id="script-count">5</span>
+					</h2>
+					<div class="tag-filter">
+						<div class="tag-filter-header">
+							<i class="fas fa-tags"></i>
+							<span>按标签筛选：</span>
+						</div>
+						<div class="tag-list" id="script-tags">
+							<button class="tag-filter-item active" data-tag="all">全部</button>
+							<button class="tag-filter-item" data-tag="增强">增强</button>
+							<button class="tag-filter-item" data-tag="美化">美化</button>
+							<button class="tag-filter-item" data-tag="工具">工具</button>
+							<button class="tag-filter-item" data-tag="自动化">自动化</button>
+							<button class="tag-filter-item" data-tag="学习">学习</button>
+						</div>
+					</div>
+					<div class="recommendation-grid" id="script-grid">
+						<!-- 初始显示加载状态 -->
+						<div class="loading-container">
+							<div class="loading-spinner"></div>
+							<div class="loading-text">正在加载脚本数据...</div>
+							<div class="loading-subtext">从 GitHub 获取最新推荐</div>
+						</div>
+					</div>
+
+				</section>
+			</main>
+
+			<!-- 用户页面 -->
+			<main class="content" id="users-page" style="display: none;">
+				<div class="page-header">
+					<h1 class="title" style="font-family: LXGW WenKai Screen;">
+						<i class="fas fa-users"></i>
+						用户状态
+					</h1>
+					<p class="subtitle" style="font-family: LXGW WenKai Screen;">看看使用 Amazing Luogu 的用户</p>
+				</div>
+
+				<div class="user-stats">
+					<div class="stat-card">
+						<div class="stat-icon">
+							<i class="fas fa-users"></i>
+						</div>
+						<div class="stat-content">
+							<div class="stat-number" id="total-users">--</div>
+							<div class="stat-label">总用户数</div>
+						</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-icon online">
+							<i class="fas fa-wifi"></i>
+						</div>
+						<div class="stat-content">
+							<div class="stat-number" id="online-users">--</div>
+							<div class="stat-label">在线用户</div>
+						</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-icon">
+							<i class="fas fa-clock"></i>
+						</div>
+						<div class="stat-content">
+							<div class="stat-number" id="last-updated">--</div>
+							<div class="stat-label">最后更新</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="user-controls">
+					<div class="user-search-box">
+						<i class="fas fa-search"></i>
+						<input type="text" id="userSearch" placeholder="搜索用户 UID..." class="search-input">
+					</div>
+					<div class="view-toggles">
+						<button class="view-toggle active" data-view="all">
+							<i class="fas fa-list"></i>
+							全部用户
+						</button>
+						<button class="view-toggle" data-view="online">
+							<i class="fas fa-wifi"></i>
+							仅在线
+						</button>
+						<button class="view-toggle" data-view="offline">
+							<i class="fas fa-power-off"></i>
+							仅离线
+						</button>
+					</div>
+					<button class="refresh-btn" id="refreshUsers" style="margin-top: 0;">
+						<i class="fas fa-sync-alt"></i>
+						刷新
+					</button>
+				</div>
+
+				<div class="user-list-container">
+					<div class="user-list" id="userList">
+						<div class="loading-container">
+							<div class="loading-spinner"></div>
+							<div class="loading-text">正在加载用户数据...</div>
+							<div class="loading-subtext">从服务器获取最新状态</div>
+						</div>
+					</div>
+					<div class="user-list-footer">
+						<div class="pagination-info" id="paginationInfo">
+							正在加载...
+						</div>
+						<div class="pagination-controls" id="paginationControls">
+							<!-- 分页按钮将由JavaScript生成 -->
+						</div>
+					</div>
+				</div>
+			</main>
+
+			<!-- 关于页面 -->
+			<main class="content" id="about-page" style="display: none;">
+				<div class="page-header">
+					<h1 class="title" style="font-family: LXGW WenKai Screen;">
+						<i class="fas fa-info-circle"></i>
+						关于 Amazing Luogu
+					</h1>
+					<p class="subtitle" style="font-family: LXGW WenKai Screen;">了解我们的项目、团队和愿景</p>
+				</div>
+
+				<div class="about-content">
+					<!-- 项目介绍 -->
+					<section class="about-section">
+						<div class="section-header">
+							<i class="fas fa-rocket"></i>
+							<h2>项目简介</h2>
+						</div>
+						<div class="section-content">
+							<p>Amazing Luogu 是一款专为洛谷社区设计的篡改猴插件，旨在提升用户在洛谷平台上的使用体验。</p>
+							<p>我们致力于通过技术创新，为洛谷用户提供更便捷、更智能、更美观的功能增强。</p>
+						</div>
+					</section>
+
+					<!-- 开发方向 -->
+					<section class="about-section">
+						<div class="section-header">
+							<i class="fas fa-star"></i>
+							<h2>开发方向</h2>
+						</div>
+						<div class="section-content">
+							<ul class="feature-list">
+								<li>
+									<i class="fas fa-check-circle"></i>
+									<span><strong>界面美化</strong> - 优化设置面板界面设计，提供更舒适的视觉体验</span>
+								</li>
+								<li>
+									<i class="fas fa-check-circle"></i>
+									<span><strong>功能增强</strong> - 增加更多实用功能</span>
+								</li>
+								<li>
+									<i class="fas fa-check-circle"></i>
+									<span><strong>个性化设置</strong> - 提供丰富的自定义选项，满足不同用户需求</span>
+								</li>
+								<li>
+									<i class="fas fa-check-circle"></i>
+									<span><strong>社区互动</strong> - 增强社区功能，改善用户交流体验</span>
+								</li>
+								<li>
+									<i class="fas fa-check-circle"></i>
+									<span><strong>安全保护</strong> - 注重用户隐私和安全，仅收集必要信息</span>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- 技术架构 -->
+					<!-- <section class="about-section">
+						<div class="section-header">
+							<i class="fas fa-code"></i>
+							<h2>技术架构</h2>
+						</div>
+						<div class="section-content">
+							<ul class="tech-list">
+								<li>
+									<i class="fas fa-browser"></i>
+									<div>
+										<h3>浏览器扩展</h3>
+										<p>基于 Chrome 扩展 API 开发，兼容主流浏览器</p>
+									</div>
+								</li>
+								<li>
+									<i class="fab fa-js-square"></i>
+									<div>
+										<h3>JavaScript</h3>
+										<p>使用现代 JavaScript (ES6+) 开发，代码简洁高效</p>
+									</div>
+								</li>
+								<li>
+									<i class="fas fa-paint-brush"></i>
+									<div>
+										<h3>CSS3</h3>
+										<p>采用现代 CSS 技术，支持响应式设计和暗色模式</p>
+									</div>
+								</li>
+								<li>
+									<i class="fas fa-server"></i>
+									<div>
+										<h3>Supabase</h3>
+										<p>使用 Supabase 作为后端服务，提供用户状态同步</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</section> -->
+
+					<!-- 开发团队 -->
+					<section class="about-section">
+						<div class="section-header">
+							<i class="fas fa-users"></i>
+							<h2>开发团队</h2>
+						</div>
+						<div class="section-content">
+							<div class="team-grid">
+								<div class="team-member">
+									<div class="member-avatar">
+										<i class="fas fa-user"></i>
+									</div>
+									<div class="member-info">
+										<h3>yangrenrui</h3>
+										<p>全能型</p>
+										<div class="member-tags">
+											<span class="tag">全能型</span>
+										</div>
+									</div>
+								</div>
+								<div class="team-member">
+									<div class="member-avatar">
+										<i class="fas fa-user"></i>
+									</div>
+									<div class="member-info">
+										<h3>zhangyimin12345</h3>
+										<p>主攻附属网页等，提供开发点子</p>
+										<div class="member-tags">
+											<span class="tag">Web</span>
+											<span class="tag">点子</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- 开源信息 -->
+					<section class="about-section">
+						<div class="section-header">
+							<i class="fab fa-github"></i>
+							<h2>开源与贡献</h2>
+						</div>
+						<div class="section-content">
+							<div class="open-source-info">
+								<p>Amazing Luogu 是一个开源项目，我们欢迎社区贡献：</p>
+								<ul class="contribute-list">
+									<li>
+										<i class="fas fa-code-branch"></i>
+										<span>报告问题或提出建议</span>
+									</li>
+									<li>
+										<i class="fas fa-code"></i>
+										<span>提交单一功能代码</span>
+									</li>
+									<li>
+										<i class="fas fa-language"></i>
+										<span>帮助翻译或改进文档</span>
+									</li>
+									<li>
+										<i class="fas fa-share-alt"></i>
+										<span>分享使用体验</span>
+									</li>
+								</ul>
+								<div class="github-link">
+									<a href="https://github.com/zym2013/amazing-luogu" target="_blank"
+										rel="noopener noreferrer" class="github-btn">
+										<i class="fab fa-github"></i>
+										访问 GitHub 仓库
+									</a>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- 联系方式 -->
+					<section class="about-section">
+						<div class="section-header">
+							<i class="fas fa-envelope"></i>
+							<h2>联系我们</h2>
+						</div>
+						<div class="section-content">
+							<div class="contact-info">
+								<ul class="contact-list">
+									<li>
+										<i class="fab fa-github"></i>
+										<span>GitHub: <a href="https://github.com/zym2013"
+												target="_blank">zym2013</a></span>
+									</li>
+									<li>
+										<i class="fas fa-envelope"></i>
+										<span>邮箱: <a href="mailto:3396619503@qq.com"
+												target="_blank">3396619503@qq.com</a></span>
+									</li>
+									<li>
+										<i class="fas fa-globe"></i>
+										<span>网站: <a href="https://amazingluogu.dpdns.org"
+												target="_blank">amazingluogu.dpdns.org</a></span>
+									</li>
+									<li>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											viewBox="0 0 24 24">
+											<path fill="currentColor"
+												d="M12.424 0c-.435-.005-.964.138-1.569.65c-.967.817-2.554 3.235-3.56 4.38s-2.002 1.65-2.48 2.493c-.477.844-.824 1.598-.385 2.568s2.308 2.592 3.018 3.247s.724.566 1.24.68c.517.113 1.38.188 1.857 0c.478-.19.993-.63 1.006-1.133s-.515-1.409-.928-1.887c-.413-.479-1.213-.769-1.549-.983s-.373-.076-.463-.303s-.413-.59-.078-1.056c.336-.466 1.38-1.033 2.09-1.738s1.625-1.61 2.167-2.492s1.06-2.064 1.085-2.794C13.901.902 13.603.285 13.1.12a2.2 2.2 0 0 0-.676-.12m-.397 6.936c-.243.008-.443.037-.566.097c-.492.24-.48.997-.151 1.515s1.618 1.223 2.124 1.59c.505.366.883.292.908.607c.026.316.102.315-.757 1.287c-.86.973-3.222 3.371-4.397 4.546c-1.175 1.174-1.77 1.503-2.654 2.5S4.259 21.78 3.88 22.563s-.15.997.38 1.212c.531.214 2.11.34 2.804.075c.695-.265.822-1.034 1.365-1.666c.543-.63.721-.859 1.896-2.122c.472-.507 1.242-1.32 1.998-2.118c.048.151.126.324.243.525c.423.727 1.922 2.219 2.537 3.009s.77 1.33 1.154 1.73c.384.402.55.564 1.152.677c.602.112 1.998.188 2.459 0c.461-.189.552-.576.308-1.127c-.243-.552-1.346-1.555-1.768-2.182c-.423-.627-1.243-2.095-1.845-2.71s-1.025-.776-1.768-.977c-.43-.115-.982-.11-1.444-.034c.769-.811 1.564-1.647 2.129-2.246c1.415-1.503 2.88-2.614 3.335-3.56c.455-.948-.214-1.492-.606-2.123c-.391-.631-1.124-1.363-1.743-1.666c-.62-.303-1.151-.1-1.972-.151c-.616-.038-1.737-.197-2.467-.173" />
+										</svg>
+										<span>Luogu: <a href="https://www.luogu.com.cn/chat?uid=1393230"
+												target="_blank">zhangyimin12345</a> & <a
+												href="https://www.luogu.com.cn/chat?uid=1157535"
+												target="_blank">yangrenrui</a></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<!-- 更新日志 -->
+					<!-- <section class="about-section">
+						<div class="section-header">
+							<i class="fas fa-history"></i>
+							<h2>版本历史</h2>
+						</div>
+						<div class="section-content">
+							<div class="changelog">
+								<div class="version-item">
+									<div class="version-header">
+										<span class="version-tag">v1.0.0</span>
+										<span class="version-date">2024-01-01</span>
+									</div>
+									<ul class="version-changes">
+										<li>初始版本发布</li>
+										<li>基础界面美化功能</li>
+										<li>用户状态同步系统</li>
+									</ul>
+								</div>
+								<div class="version-item">
+									<div class="version-header">
+										<span class="version-tag">v0.9.0</span>
+										<span class="version-date">2023-12-01</span>
+									</div>
+									<ul class="version-changes">
+										<li>Beta 测试版发布</li>
+										<li>社区反馈收集</li>
+										<li>性能优化</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section> -->
+				</div>
 			</main>
 		</div>
 	</div>

@@ -1,0 +1,74 @@
+{
+	"scripts": [
+		{
+			"id": 1,
+			"name": "Violentmonkey",
+			"url": "https://violentmonkey.github.io",
+			"downloadUrl": "https://violentmonkey.github.io/get-it/",
+			"avatar": "https://violentmonkey.github.io/_astro/vm.C4h557K-.png",
+			"description": "强大的用户脚本管理器，支持 Greasemonkey、Tampermonkey 脚本",
+			"tags": [
+				"工具",
+				"增强",
+				"自动化"
+			],
+			"type": "script"
+		},
+		{
+			"id": 2,
+			"name": "Tampermonkey",
+			"url": "https://www.tampermonkey.net",
+			"downloadUrl": "https://www.tampermonkey.net",
+			"avatar": "https://www.tampermonkey.net/favicon.ico",
+			"description": "最流行的用户脚本管理器，支持 Chrome、Firefox、Safari 等浏览器",
+			"tags": [
+				"工具",
+				"增强",
+				"自动化"
+			],
+			"type": "script"
+		},
+		{
+			"id": 3,
+			"name": "Dark Reader",
+			"url": "https://darkreader.org",
+			"downloadUrl": "https://darkreader.org",
+			"avatar": "https://darkreader.org/images/darkreader-icon-256x256.png",
+			"description": "为所有网站启用夜间模式，保护眼睛，减少蓝光伤害",
+			"tags": [
+				"美化",
+				"工具",
+				"增强"
+			],
+			"type": "script"
+		},
+		{
+			"id": 4,
+			"name": "AdBlock Plus",
+			"url": "https://adblockplus.org",
+			"downloadUrl": "https://adblockplus.org",
+			"avatar": "https://accounts.adblockplus.org/img/adblock-plus-latest.svg?3378138409",
+			"description": "屏蔽网页广告、弹窗和跟踪器，提供更清爽的浏览体验",
+			"tags": [
+				"工具",
+				"增强",
+				"安全"
+			],
+			"type": "script"
+		},
+		{
+			"id": 5,
+			"name": "Stylus",
+			"url": "https://add0n.com/stylus.html",
+			"downloadUrl": "https://add0n.com/stylus.html",
+			"avatar": "https://cdn.add0n.com/icons/stylus64.png",
+			"description": "用户样式管理器，轻松为网站应用自定义 CSS 样式",
+			"tags": [
+				"美化",
+				"工具",
+				"自定义"
+			],
+			"type": "script"
+		}
+	]
+}
